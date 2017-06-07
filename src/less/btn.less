@@ -12,12 +12,36 @@
 		&:before {
 		    content: "";
 		    position: absolute;
-		    right: 0;
+		    right: -5px;
 		    top: 9px;
 		    width: 32px;
 		    height: 2px;
 		    box-shadow: 0 7px #fff, 0 -7px #fff;
 		    background-color: #fff;
+		}
+
+		&-opened {
+
+			&:after {
+			    content: "";
+			    position: absolute;
+			    display: block;
+			    width: 32px;
+			    height: 2px;
+			    background-color: #fff;
+			    transform: rotate(-45deg);
+			}
+
+			&:before {
+			    transform: rotate(45deg);
+			    box-shadow: none;
+			    background-color: #fff;
+			    top: 10px;
+			}
+		}
+
+		&:focus {
+			outline: none;
 		}
 	}
 

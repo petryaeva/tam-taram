@@ -1,0 +1,32 @@
+.header {
+	padding-bottom: 14px;
+	
+	&__top {
+		padding: 24px 10px;
+		background-color: @bg-header-top;
+		display: flex;
+	}
+
+	&__bottom {
+		padding: 6px 20px;
+        background-color: @bg-header-bottom;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+	&__menu {
+		display: none;
+		position: absolute;
+	    background: #666;
+	    background-color: #212121;
+	    width: 100%;
+	    height: 100vh;
+	    top: 0;
+	    left: 0;
+	    display: flex;
+	    flex-direction: column;
+	    text-align: center;
+	    z-index: 10;
+	}
+}

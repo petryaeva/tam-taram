@@ -1,0 +1,33 @@
+.btn {
+	border: none;
+	background: none;
+		
+	&--menu {
+		width: 32px;
+		height: 20px;
+		position: relative;
+		margin: 0 10px;
+		z-index: 100;
+		
+		&:before {
+		    content: "";
+		    position: absolute;
+		    right: 0;
+		    top: 9px;
+		    width: 32px;
+		    height: 2px;
+		    box-shadow: 0 7px #fff, 0 -7px #fff;
+		    background-color: #fff;
+		}
+	}
+
+	&--grey {
+	  background-color: rgb(37, 37, 37);
+	  width: 140px;
+	  height: 44px;
+	  .font-control(13px; 1.2; 400);  
+	  color: rgb(255, 255, 255);
+	  text-transform: uppercase;
+	  text-align: center;
+	}
+}

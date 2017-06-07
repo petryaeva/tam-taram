@@ -15,29 +15,165 @@
 <!-- Код для примера -->
 
 <% const menuItems = [
-    {title: 'HairCare', link: '#'},
+    {title: 'Haircare', link: '#'},
     {title: 'Color', link: '#'},
-    {title: 'Styling', link: '#'}
-    /* ... */
+    {title: 'Styling', link: '#'},
+    {title: 'Texture', link: '#'},
+    {title: 'Get inspired', link: '#'},
+    {title: 'Social', link: '#'},
+    {title: 'News', link: '#'},
+    {title: 'About', link: '#'},
+    {title: 'Professional', link: '#'} 
+]; %>
+
+<% const menuFooter = [
+    {title: 'Privacy policy', link: '#'},
+    {title: 'Terms of use', link: '#'},
+    {title: 'Contact us', link: '#'},
+    {title: 'Mewsletter', link: '#'},
+    {title: 'Sitemap', link: '#'}
+]; %>
+
+<% const socialItems = [
+    {link: 'https://facebook.com', mod: 'fb'},
+    {link: 'https://twitter.com', mod: 'tw'},
+    {link: 'https://ru.pinterest.com', mod: 'pi'},
+    {link: 'https://www.youtube.com/', mod: 'yt'},
+    {link: 'https://instagram.com', mod: 'in'}
+]; %>
+
+<% const salonItems = [
+    {name: 'Nearest salon'},
+    {name: 'Next salon'}
+]; %>
+
+<% const breadcrumbs = [
+    {title: 'Home', link: '#'},
+    {title: 'Videos', link: ' '}
+]; %>
+
+<% const videosStepByStep = [
+    {urlImg: 'https://img.youtube.com/vi/z8M0Fa1JVco/0.jpg', urlVideo: 'https://youtu.be/z8M0Fa1JVco'},
+	{urlImg: 'https://img.youtube.com/vi/Wi2KcdoCuo4/0.jpg', urlVideo: 'https://youtu.be/Wi2KcdoCuo4'},
+	{urlImg: 'https://img.youtube.com/vi/8H6dYUgQKB8/0.jpg', urlVideo: 'https://youtu.be/8H6dYUgQKB8'},
+	{urlImg: 'https://img.youtube.com/vi/PZjGrmHdFME/0.jpg', urlVideo: 'https://youtu.be/PZjGrmHdFME'},
+	{urlImg: 'https://img.youtube.com/vi/_wLGr24VeoI/0.jpg', urlVideo: 'https://youtu.be/_wLGr24VeoI'},
+	{urlImg: 'https://img.youtube.com/vi/DG4FAU5qmMY/0.jpg', urlVideo: 'https://youtu.be/DG4FAU5qmMY'}
+]; %>
+
+<% const videosCraftEducation = [
+    {urlImg: 'https://img.youtube.com/vi/RmNWNLXmswk/0.jpg', urlVideo: 'https://youtu.be/RmNWNLXmswk'},
+	{urlImg: 'https://img.youtube.com/vi/-tztXOz8Vc0/0.jpg', urlVideo: 'https://youtu.be/-tztXOz8Vc0'},
+	{urlImg: 'https://img.youtube.com/vi/kUfIVtyydgQ/0.jpg', urlVideo: 'https://youtu.be/kUfIVtyydgQ'}
+]; %>
+
+<% const videosInspiration = [
+    {urlImg: 'https://img.youtube.com/vi/VmmwwzR536g/0.jpg', urlVideo: 'https://youtu.be/VmmwwzR536g'},
+	{urlImg: 'https://img.youtube.com/vi/vz0k8O-Ef9Y/0.jpg', urlVideo: 'https://youtu.be/vz0k8O-Ef9Y'},
+	{urlImg: 'https://img.youtube.com/vi/6oPBFnsqJW8/0.jpg', urlVideo: 'https://youtu.be/6oPBFnsqJW8'}
 ]; %>
 
 <header class="header">
     <div class="header__top">
-    </div>
-    <div class="header__bottom">
+    	<button class="btn btn--menu"></button>
         <div class="menu header__menu">
             <% menuItems.forEach((item) => { %>
-            <li class="menu__item"><a class="menu__link" href="<%= item.link; %>"><%= item.title %></a></li>
+            	<a class="menu__link" href="<%= item.link; %>"><%= item.title %></a>
             <% }) %>
         </div>
+        <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
+    </div>
+    <div class="header__bottom">
+    	<div class="salon-checked">
+    		<div class="select-wrap">
+				<select name="salon" id="" class="select">
+		    		<% salonItems.forEach((item) => { %>            
+		            <option value="nearest"><%= item.name %></option>
+		            <% }) %>
+		    	</select>
+	    	</div>
+			
+			<div class="salon-checked__salon">Plush Salon 92101</div>
+    	</div>
+    	
+
+    	<form action="/" class="form form--search">
+			<input type="search" placeholder="Search">
+		</form>
     </div>
 </header>
 
-<img src="img/pic.png" alt="">
+<div class="content">
+	<div class="breadcrumbs">
+		<% breadcrumbs.forEach((item) => { %>   
+        <a href="#" class="breadcrumbs__item"><%= item.title %></a>
+        <% }) %>
+	</div>
+
+	<h1 class="title-h1">Videos</h1>
+
+	<div class="videos videos--first">
+		<a class="videos__item"
+		   href="https://youtu.be/VmmwwzR536g" 
+		   style="background-image: url(https://img.youtube.com/vi/VmmwwzR536g/0.jpg);"></a>
+		<div class="videos__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Pellentesque lobortis, nisl at ullamcorper egestas, 
+		felisadi piscing dolor, a interdum lorem urna quis magna.</div>
+	</div>
+
+	<section class="video-list">
+		<h2 class="video-list__title video-list__title--sm-lt-sp">Step <span>by</span> step</h2>
+		<div class="videos">
+			<% videosStepByStep.forEach((item) => { %>
+			<a class="videos__item" 
+			   href="<%=item.urlVideo;%>" 
+			   style="background-image: url(<%=item.urlImg;%>);"></a>
+			<% }) %>
+		</div>
+		<button class="btn btn--grey">Load more</button>
+	</section>
+
+	<section class="video-list">
+		<h2 class="video-list__title">Craft <span>education</span></h2>
+		<div class="videos">
+			<% videosCraftEducation.forEach((item) => { %>
+			<a class="videos__item" 
+			   href="<%=item.urlVideo;%>" 
+			   style="background-image: url(<%=item.urlImg;%>);"></a>
+			<% }) %>
+		</div>
+		<button class="btn btn--grey">Load more</button>
+	</section>
+
+	<section class="video-list">
+		<h2 class="video-list__title">Inspiration</h2>
+		<div class="videos">
+			<% videosInspiration.forEach((item) => { %>
+			<a class="videos__item" 
+			   href="<%=item.urlVideo;%>"  
+			   style="background-image: url(<%=item.urlImg;%>);"></a>
+			<% }) %>
+		</div>
+		<button class="btn btn--grey">Load more</button>
+	</section>
+</div>
+
+<!-- <img src="img/pic.png" alt=""> -->
 <footer class="footer">
-    <div class="menu menu_bottom footer__menu">
-        <% menuItems.forEach((item) => { %>
-        <li class="menu__item"><a class="menu__link" href="<%= item.link; %>"><%= item.title %></a></li>
+    <div class="social">
+		<% socialItems.forEach((item) => { %>
+        	<a class="social__item social__item--<%=item.mod;%>" href="<%=item.link;%>"></a>
+        <% }) %>
+    </div>
+
+    <div class="mark">
+		<div class="mark__item">Location: United States</div>
+		<div class="mark__item">Language: English</div>
+    </div>
+
+	<div class="menu menu--footer">
+        <% menuFooter.forEach((item) => { %>
+        <a class="menu__item" href="<%= item.link; %>"><%= item.title %></a>
         <% }) %>
     </div>
 </footer>
@@ -46,5 +182,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/pixel.perfect.js"></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+.form {
+	input {
+		outline: none;
+	}
+	input[type=search] {
+		-webkit-appearance: textfield;
+		-webkit-box-sizing: content-box;
+		font-family: inherit;
+		font-size: 100%;
+	}
+	input::-webkit-search-decoration,
+	input::-webkit-search-cancel-button {
+		display: none; 
+	}
+	input[type=search] {
+		background: url('../img/ico_search.svg') no-repeat 0 0;
+		border: none;
+		transition: all .5s;
+	}
+	input[type=search]:focus {
+		width: 130px;
+		background-color: #fff;
+		border-color: #66CC75;
+		box-shadow: 0 0 5px rgba(109,207,246,.5);
+	}
+
+	input:-moz-placeholder {
+		color: #999;
+	}
+	input::-webkit-input-placeholder {
+		color: #999;
+	
+	}
+	&--search {
+		position: relative;
+		width: 20px;
+		height: 20px;
+	}
+	&--search input[type=search] {
+		width: 20px;
+		height: 20px;
+		padding-left: 10px;
+		color: transparent;
+		cursor: pointer;
+	}
+	&--search input[type=search]:hover {
+		background-color: #fff;
+	}
+	&--search input[type=search]:focus {
+		width: 130px;
+		padding-left: 15px;
+		color: #000;
+		background-color: #fff;
+		cursor: auto;
+		right: 0;
+		position: absolute; 
+	}
+	&--search input:-moz-placeholder {
+		color: transparent;
+	}
+	&--search input::-webkit-input-placeholder {
+		color: transparent; 
+	}
+}

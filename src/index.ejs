@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -75,14 +76,32 @@
 
 <header class="header">
     <div class="header__top">
+    	<div class="salon-checked salon-checked--tablet">
+    		<div class="select-wrap">
+				<select name="salon" id="" class="select">
+		    		<% salonItems.forEach((item) => { %>            
+		            <option value="nearest"><%= item.name %></option>
+		            <% }) %>
+		    	</select>
+	    	</div>
+			
+			<div class="salon-checked__salon">Plush Salon 92101</div>
+    	</div>
+
     	<button class="btn btn--menu"></button>
         <div class="menu header__menu">
             <% menuItems.forEach((item) => { %>
             	<a class="menu__link" href="<%= item.link; %>"><%= item.title %></a>
             <% }) %>
         </div>
+
         <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
+
+        <form action="/" class="form form--search">
+			<input type="search" placeholder="Search">
+		</form>
     </div>
+
     <div class="header__bottom">
     	<div class="salon-checked">
     		<div class="select-wrap">
@@ -100,15 +119,23 @@
     	<form action="/" class="form form--search">
 			<input type="search" placeholder="Search">
 		</form>
+
+		<div class="menu header__menu">
+            <% menuItems.forEach((item) => { %>
+            	<a class="menu__link" href="<%= item.link; %>"><%= item.title %></a>
+            <% }) %>
+    	</div> 
     </div>
 </header>
 
+<div class="breadcrumbs">
+	<% breadcrumbs.forEach((item) => { %>   
+    <a href="#" class="breadcrumbs__item"><%= item.title %></a>
+    <% }) %>
+</div>
+
 <div class="content">
-	<div class="breadcrumbs">
-		<% breadcrumbs.forEach((item) => { %>   
-        <a href="#" class="breadcrumbs__item"><%= item.title %></a>
-        <% }) %>
-	</div>
+	
 
 	<h1 class="title-h1">Videos</h1>
 
@@ -125,9 +152,11 @@
 		<h2 class="video-list__title video-list__title--sm-lt-sp">Step <span>by</span> step</h2>
 		<div class="videos">
 			<% videosStepByStep.forEach((item) => { %>
-			<a class="videos__item" 
-			   href="<%=item.urlVideo;%>" 
-			   style="background-image: url(<%=item.urlImg;%>);"></a>
+			<div>
+				<a class="videos__item" 
+				   href="<%=item.urlVideo;%>" 
+				   style="background-image: url(<%=item.urlImg;%>);"></a>
+			</div>
 			<% }) %>
 		</div>
 		<button class="btn btn--grey">Load more</button>
@@ -137,9 +166,11 @@
 		<h2 class="video-list__title">Craft <span>education</span></h2>
 		<div class="videos">
 			<% videosCraftEducation.forEach((item) => { %>
-			<a class="videos__item" 
-			   href="<%=item.urlVideo;%>" 
-			   style="background-image: url(<%=item.urlImg;%>);"></a>
+			<div>
+				<a class="videos__item" 
+				   href="<%=item.urlVideo;%>" 
+				   style="background-image: url(<%=item.urlImg;%>);"></a>
+			</div>
 			<% }) %>
 		</div>
 		<button class="btn btn--grey">Load more</button>
@@ -149,16 +180,17 @@
 		<h2 class="video-list__title">Inspiration</h2>
 		<div class="videos">
 			<% videosInspiration.forEach((item) => { %>
-			<a class="videos__item" 
-			   href="<%=item.urlVideo;%>"  
-			   style="background-image: url(<%=item.urlImg;%>);"></a>
+			<div>
+				<a class="videos__item" 
+				   href="<%=item.urlVideo;%>" 
+				   style="background-image: url(<%=item.urlImg;%>);"></a>
+			</div>
 			<% }) %>
 		</div>
 		<button class="btn btn--grey">Load more</button>
 	</section>
 </div>
 
-<!-- <img src="img/pic.png" alt=""> -->
 <footer class="footer">
     <div class="social">
 		<% socialItems.forEach((item) => { %>
@@ -182,6 +214,5 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script src="js/scripts.js"></script>
-<!-- <script src="js/pixel.perfect.js"></script> -->
 </body>
 </html>

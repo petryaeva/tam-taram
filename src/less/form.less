@@ -15,13 +15,13 @@
 	input[type=search] {
 		background: url('../img/ico_search.svg') no-repeat 0 0;
 		border: none;
-		transition: all .5s;
+		transition: all .5s;    
+		background-size: 65%;
 	}
 	input[type=search]:focus {
 		width: 130px;
 		background-color: #fff;
-		border-color: #66CC75;
-		box-shadow: 0 0 5px rgba(109,207,246,.5);
+		background-size: 0;
 	}
 
 	input:-moz-placeholder {
@@ -34,20 +34,17 @@
 	&--search {
 		position: relative;
 		width: 20px;
-		height: 20px;
+		height: 25px;
 	}
 	&--search input[type=search] {
 		width: 20px;
-		height: 20px;
+		height: 25px;
 		padding-left: 10px;
 		color: transparent;
 		cursor: pointer;
 	}
-	&--search input[type=search]:hover {
-		background-color: #fff;
-	}
 	&--search input[type=search]:focus {
-		width: 130px;
+		width: 140px;
 		padding-left: 15px;
 		color: #000;
 		background-color: #fff;

@@ -1,0 +1,71 @@
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    width: 20px;
+    height: 35px;
+    
+    &:before {
+		content: '';
+		width: 20px;
+		height: 6px;
+		display: block;
+		background: #cdcdcd;
+		padding: 0;
+	}
+
+	&:after {
+		content: '';
+		width: 20px;
+		height: 6px;
+		display: block;
+		background: #cdcdcd;
+		padding: 0;
+		position: absolute;
+		top: 5px;
+	}
+    
+	&--next {
+		right: -25px;
+		
+		&:before {
+			transform: rotate(-50deg);
+			background: #000;
+		}
+		
+		&:after {
+			transform: rotate(50deg);
+			background: #000;
+		}
+
+		@media @desktop {
+			right: -55px;
+		}
+	}
+
+	&--prev {
+		left: -20px;
+		
+		&:before {
+			transform: rotate(50deg);
+		}
+		
+		&:after {
+			transform: rotate(-50deg);
+		}
+
+		@media @desktop {
+			left: -50px;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+.slick-slide {
+	padding: 0 20px;
+}

@@ -3,11 +3,12 @@
     padding: 0;
 
     @media @tablet {
-        
+        flex-wrap: wrap;
     }
 
     @media @desktop {
-        
+        width: 930px;
+        margin: 0 auto;
     }
 
     &__item {
@@ -24,18 +25,38 @@
 	        .font-control(11px; 1em; 400);
 	        margin-right: 7px;
 	    }
+    
+	    @media @tablet {
+	        order: 1;
+	        width: 200px;
+	        margin-left: 0;
+	        line-height: 14px;
+	    }
 	}
 
     &__link {
-        color: #FFF;
+        color: #ccc;
         text-decoration: none;
-        padding-top: 25px;
+        padding-top: 20px;
+        padding-bottom: 20px;
 	    text-decoration: none;
 	    font-size: 16px;
 	    text-transform: uppercase;
-        
+	    font-family: 'PT Sans Narrow', sans-serif;
+	    
+	    @media @tablet {
+	        font-size: 14px;
+		    padding: 10px 19px;
+		    line-height: 1.9;
+		}
+
+		@media @desktop {				
+			padding: 5px 20px;				
+		}
+
 		&:hover {
 			text-decoration: underline;
+			background: #000;
 		}
     }
 

@@ -1,41 +1,73 @@
+@import 'fonts';
+@import 'normalize';
+@import 'header';
+@import 'logo';
+@import 'select';
+@import 'menu';
+@import 'form';
+@import 'btn';
+@import 'breadcrumbs';
+@import 'videos';
+@import 'salon-checked';
+@import 'footer';
+@import 'social';
+@import 'mark';
+@import 'slick';
 @import 'media';
 
-// Код для примера
+@font-primary: 'PTSans', sans-serif;
+@font-secondary: 'PTSansNarrow', sans-serif;
+@bg-header-top: #6a17d2;
+@bg-header-bottom: #212121;
+
+.font-control(@fontSize; @lineHeight; @fontWeight) {
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  font-weight: @fontWeight;
+}
+
 body {
-    background: #ccc;
+    .font-control(14px; 21px; 400);
+    background-color: #fff;
+    margin: 0 auto;
+    font-family: @font-primary;
 }
 
-.menu {
-    margin: 0;
-    padding: 0;
+* {
+	box-sizing: border-box;
+}
+
+#pmOverlay {
     text-align: center;
-    background: red; // red on small devices
-
-    @media @tablet {
-        background: green; // green on medium devices
-    }
-
-    @media @desktop {
-        background: blue; // blue on large devices
-    }
-
-    &__item {
-        display: inline-block;
-        list-style-type: none;
-    }
-
-    &__link {
-        color: #FFF;
-    }
-
-    // Bottom Menu
-    &_bottom { // BEM modifier example
-        background: green;
-    }
-
-    &_bottom &__link {
-        color: #f00;
-    }
 }
 
+.content {
+    padding: 0 10px;
+    margin-bottom: 130px;
+    .container();
+    
+    @media @tablet {
+        padding: 0 40px;
+        margin-bottom: 75px;
+    }
 
+	@media @desktop {
+		padding: 0;
+		margin-bottom: 145px;
+	}
+}
+
+.title-h1 {
+	.font-control(28px; 1.1em; 800);
+  	color: rgb(12, 12, 12);
+  	text-transform: uppercase;
+  	
+  	@media @tablet {
+        font-size: 60px;
+        margin: 10px 0;
+    }
+
+	@media @desktop {
+		font-size: 80px;
+	}
+}

@@ -1,0 +1,43 @@
+.social {
+	display: flex;
+	margin-bottom: 32px;
+	
+	&__item {
+		width: 20px;
+		height: 20px;
+		margin-right: 18px;
+		background-repeat: no-repeat;
+		
+		&--fb {
+			background-image: url(../img/ico_facebook.svg);
+			background-position: 50% 0;
+		}
+
+		&--tw {
+			width: 24px;
+			background-image: url(../img/ico_twitter.svg);
+			background-position: 0 0;
+		}
+
+		&--pi {
+			background-image: url(../img/ico_pinterest.svg);
+			background-position: 0 0;
+		}
+
+		&--yt {
+			background-image: url(../img/ico_youtube.svg);
+			background-position: 0 0;
+		}
+
+		&--in {
+			background-image: url(../img/ico_instagram.svg);
+			background-position: 0 0;
+		}
+	}
+    
+    @media @tablet {
+        order: 2;
+        margin: 0 auto;
+        margin-top: 5px;
+    }
+}

@@ -5,7 +5,7 @@
 // ## Minimum values for device width
 @xs-min: 320px; // extra small
 @sm-min: 768px; // small
-@md-min: 992px; // middle
+@md-min: 960px; // middle
 @lg-min: 1200px; // large
 
 // ## Maximum values for device width
@@ -24,3 +24,16 @@
 @desktop-strict: ~"only screen and (min-width: @{md-min}) and (max-width: @{md-max})";
 
 @large: ~"only screen and (min-width: @{lg-min})";
+
+.container() {
+  width: @xs-min;
+  margin: 0 auto; 
+
+  @media @tablet {
+    width: @sm-min;
+  }
+
+  @media @desktop {
+    width: @md-min;
+  }
+}

@@ -6,14 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-<!-- Код для примера -->
 
 <% const menuItems = [
     {title: 'Haircare', link: '#'},
@@ -78,7 +76,7 @@
     <div class="header__top">
     	<div class="salon-checked salon-checked--tablet">
     		<div class="select-wrap">
-				<select name="salon" id="" class="select">
+				<select name="salon" class="select">
 		    		<% salonItems.forEach((item) => { %>            
 		            <option value="nearest"><%= item.name %></option>
 		            <% }) %>
@@ -105,7 +103,7 @@
     <div class="header__bottom">
     	<div class="salon-checked">
     		<div class="select-wrap">
-				<select name="salon" id="" class="select">
+				<select name="salon" class="select">
 		    		<% salonItems.forEach((item) => { %>            
 		            <option value="nearest"><%= item.name %></option>
 		            <% }) %>
@@ -210,9 +208,9 @@
     </div>
 </footer>
 
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 </html>

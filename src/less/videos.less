@@ -1,5 +1,10 @@
 .videos {
 
+	@media @tablet {
+		max-height: auto;
+		overflow: auto;
+	}
+
 	&__item {
 		display: block;
 		width: 300px;
@@ -126,6 +131,21 @@
 	@media @tablet {
 		.btn--grey {
 			display: none;
+		}
+	}
+
+	.videos {
+		height: 615px;
+		overflow: hidden;
+		transition: height 1s;
+		
+		&--load-more {
+			height: auto;
+		}
+
+		@media @tablet {
+			height: auto;
+			overflow: visible;
 		}
 	}
 
